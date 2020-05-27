@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-05-27 23:09:30
+ * @LastEditTime: 2020-05-27 23:42:12
  * @FilePath    : \algorithm-design\chapters\chapter08-dynamic-programming\test-1.md
  * @Describe    : 
  -->
@@ -30,7 +30,8 @@
 为了避免重复设计，设计一个 dp 数组，dp[i] 存放 Fib(i) 的值，首先设置 dp[1] 和 dp[2] 均为 1，再让 i 从 3 到 n 循环以计算 dp[3] 到 dp[n] 的值，最后返回 dp[n]，即 Fib(n)。
 
 ## 代码
-
+- [exp8-1.cpp](./code/exp8-1.cpp)
+- [test8_1.cpp](./../../test/test8_1.cpp)
 
 ## 复杂度分析
 
