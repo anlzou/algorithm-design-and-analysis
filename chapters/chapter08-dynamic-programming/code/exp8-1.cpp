@@ -12,24 +12,24 @@
 
 using namespace std;
 
+int dp[MaxSize];
 /**
  * 求斐波那契数列动态规划算法
  */
-int Fibonacci(int n) {
-    int sum = 1;  //累计求解步骤
-    int dp[MaxSize];
+void Fibonacci(int n) {
     dp[1] = dp[2] = 1;
-
-    cout << "(" << sum++ << ")"
-         << "计算出 Fib(1)=1" << endl;
-
-    cout << "(" << sum++ << ")"
-         << "计算出 Fib(2)=1" << endl;
 
     for (int i = 3; i <= n; i++) {
         dp[i] = dp[i - 1] + dp[i - 2];
-        cout << "(" << sum++ << ")"
-             << "计算出 Fib(" << i << ")=" << dp[i] << endl;
     }
-    return dp[n];
+}
+
+/*================================ test ==================================*/
+int main() {
+    Fibonacci(40);
+    for (int i = 1; i <= 40; i++) {
+        cout << "[" << i << "]：" << dp[i] << endl;
+    }
+
+    return 0;
 }

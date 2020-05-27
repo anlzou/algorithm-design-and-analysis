@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-05-27 23:42:12
+ * @LastEditTime: 2020-05-28 00:06:18
  * @FilePath    : \algorithm-design\chapters\chapter08-dynamic-programming\test-1.md
  * @Describe    : 
  -->
@@ -31,9 +31,8 @@
 
 ## 代码
 - [exp8-1.cpp](./code/exp8-1.cpp)
-- [test8_1.cpp](./../../test/test8_1.cpp)
 
 ## 复杂度分析
 
-- 时间复杂度：O( )
-- 空间复杂度：O( )
+- 时间复杂度：O(n-2)
+- 空间复杂度：O(n+1)

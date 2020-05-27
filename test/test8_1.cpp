@@ -6,9 +6,7 @@
  * @FilePath    : \algorithm-design\test\test8_1.cpp
  * @Describe    :
  */
-#include "../chapters/chapter08-dynamic-programming/code/exp8-1.cpp"
+#include <iostream>
+using namespace std;
 
-int main() {
-    Fibonacci(45);
-    return 0;
-}
+int main() { return 0; }
