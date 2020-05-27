@@ -2,7 +2,7 @@
  * @Date        : 2020-05-27 21:37:16
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-05-27 21:43:28
+ * @LastEditTime: 2020-05-27 23:50:16
  * @FilePath    : \algorithm-design\README.md
  * @Describe    : 
 --> 
@@ -17,6 +17,7 @@
 ### 第六章 分枝限界法
 ### 第七章 贪心法
 ### 第八章 动态规划
+- [求解斐波那契数列](./chapters/chapter08-dynamic-programming/test-1.md)
 ### 第九章 图算法设计
 ### 第十章 计算几何
 ### 第十一章 计算复杂性理论简介
