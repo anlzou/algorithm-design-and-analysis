@@ -7,15 +7,7 @@
  * \algorithm-design\chapters\chapter08-dynamic-programming\code\exp8-1.cpp
  * @Describe    :
  */
-/***
- * @Date        : 2020-05-27 23:10:45
- * @LastEditors : anlzou
- * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-05-27 23:14:54
- * @FilePath    :
- * \algorithm-design\chapters\chapter08-dynamic-programming\code\exp8-1.cpp
- * @Describe    :
- */
+
 #include <iostream>
 #define MaxSize 46
 
