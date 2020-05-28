@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-05-28 00:06:18
+ * @LastEditTime: 2020-05-28 08:32:29
  * @FilePath    : \algorithm-design\chapters\chapter08-dynamic-programming\test-1.md
  * @Describe    : 
  -->
@@ -13,7 +13,7 @@
 
 问题：
 ```
-求解斐波那契数列
+求解斐波那契数列，Fib(n)的值
 ```
 目的：
 ```
