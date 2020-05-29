@@ -50,6 +50,29 @@ void delAllx(LinkNode *&L, ElemType x) {
     }
 }
 
+/**
+ * 递归创建二叉树
+ * 由先序序列 a[0...n-1] 和中序列 b[0...n-1] 创建二叉链存储结构 bt
+ */
+BTNode *CreateBTree(ElemType a[], ElemType b[], int n) {
+    int k;
+    if (n <= 0) {
+        return NULL;
+    }
+    ElemType root = a[0];  //根结点值
+    BTNode *bt = (BTNode *)malloc(sizeof(BTNode));
+    bt->data = root;
+    for (k = 0; k < n; k++) {  //在 b 中查找 b[k] = root 的根结点
+        if (b[k] == root) {
+            break;
+        }
+        bt->lchild = CreateBTree(a + 1, b, k);  //递归创建左子树
+        bt->rchild =
+            CreateBTree(a + k + 1, b + k + 1, n - k - 1);  //递归创建右子树
+        return bt;
+    }
+}
+
 /*==================Test================*/
 int main() {
     int arr[] = {10, 4, 6, 20, 5};

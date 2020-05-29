@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-05-29 21:09:29
+ * @LastEditTime: 2020-05-29 21:28:32
  * @FilePath    : \algorithm-design\chapters\chapter02-recursive-algorithm-design-art\test2-2.md
  * @Describe    : 
  -->
@@ -18,6 +18,8 @@
 #2.6 有一个不带头结点的单链表 L，设计一个算法释放其中的所有结点。
 
 #2.7 有一个不带头结点的单链表 L，设计一个算法删除其中所有结点值为 x 的结点。
+
+#2.8 对于含有 n(n > 0) 个结点的二叉树，所有结点值为 int 类型，设计一个算法由其先序序列 a 和中序序列 b 创建对应的二叉链存储结构。
 ```
 
 ## 思路
@@ -39,12 +41,17 @@ f(L) ≡ f(L->next);释放 *L 结点      //其他情况
 其中，“≡”表示功能等价关系。
 
 #3
+
 设 f(L, x) 的功能是删除以 L 为首结点的单链表中所有结点值为 x 的结点，是“大问题”，而 f(L->next, x) 的功能是删除以 L->next 为首结点的单链表中所有节点值为 x 的结点，是“大问题”。对应的递归模型如下：
 ```c++
 f(L, x) ≡ 不做任何事情     //当 L = NULL 时
 f(L, x) ≡ 删除 L 结点；L指向原后继结点；f(L, x)    //当 L->data = x时
 f(L, x) ≡ f(L->next, x)   //当 L->data ≠ x 时
 ```
+
+#4
+
+设 f(a, b, n) 的功能是返回先序序列 a 和中序序列 b 创建含 n 个结点的二叉链的根结点。先创建根结点 bt，其结点值为 root(a[0])。在 b 序列中找到根结点值 b[k]，再递归调用 CreateBTree(a+1, b, k) 创建 bt 的左子树，递归调用 CreateBTree(a+k+1, b+k+1, n-k-1) 创建 bt 的右子树。创建整个二叉链是“大问题”，创建左、右子树的二叉链是“小问题”，递归出口对应 n <= 0 的情况。
 
 ## 关键点
 - 递归体
