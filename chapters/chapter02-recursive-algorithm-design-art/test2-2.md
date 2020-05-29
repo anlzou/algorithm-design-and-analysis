@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-05-29 21:28:32
+ * @LastEditTime: 2020-05-29 21:47:56
  * @FilePath    : \algorithm-design\chapters\chapter02-recursive-algorithm-design-art\test2-2.md
  * @Describe    : 
  -->
@@ -20,6 +20,8 @@
 #2.7 有一个不带头结点的单链表 L，设计一个算法删除其中所有结点值为 x 的结点。
 
 #2.8 对于含有 n(n > 0) 个结点的二叉树，所有结点值为 int 类型，设计一个算法由其先序序列 a 和中序序列 b 创建对应的二叉链存储结构。
+
+#2.10 假设二叉树采用二叉链存储结构，设计一个递归算法由二叉树 bt 复制产生另一颗二叉树 btcopy。
 ```
 
 ## 思路
@@ -53,11 +55,21 @@ f(L, x) ≡ f(L->next, x)   //当 L->data ≠ x 时
 
 设 f(a, b, n) 的功能是返回先序序列 a 和中序序列 b 创建含 n 个结点的二叉链的根结点。先创建根结点 bt，其结点值为 root(a[0])。在 b 序列中找到根结点值 b[k]，再递归调用 CreateBTree(a+1, b, k) 创建 bt 的左子树，递归调用 CreateBTree(a+k+1, b+k+1, n-k-1) 创建 bt 的右子树。创建整个二叉链是“大问题”，创建左、右子树的二叉链是“小问题”，递归出口对应 n <= 0 的情况。
 
+#5
+
+设 f(bt, btcopy) 的功能是由二叉树 bt 复制产生另一颗二叉树 btcopy，它是“大问题”，而 f(bt->lchild, btcopy->lchild)的功能就是由 bt 的左子树复制产生 btcopy 的左子树，f(bt->rchild, btcopy->rchild) 的功能就是由 bt 的右子树复制产生 btcopy 的右子树，它们是 “小问题”，对应递归模型如下：
+```c++
+f(bt, btcopy) ≡ btcopy = NULL                   //当 b = NULL 时
+f(bt, btcopy) ≡ 由 bt 结点复制产生 btcopy 结点;   //其他情况
+   f(bt->lchild, btcopy->lchild);
+   f(bt->rchild, btcopy->rchild);
+```
+
 ## 关键点
 - 递归体
 
 ## 代码
-#1、2、3
+#1、2、3、4、5
 
 - [exp2-2.cpp](code/exp2-2.cpp)
 

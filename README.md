@@ -2,7 +2,7 @@
  * @Date        : 2020-05-27 21:37:16
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-05-28 09:19:28
+ * @LastEditTime: 2020-05-29 21:53:39
  * @FilePath    : \algorithm-design\README.md
  * @Describe    : 
 --> 
@@ -12,6 +12,7 @@
 ### 第一章 概论
 ### 第二章 递归算法设计艺术
 - [什么是递归](./chapters/chapter02-recursive-algorithm-design-art/test2-1.md)
+- [递归算法设计](./chapters/chapter02-recursive-algorithm-design-art/test2-2.md)
 ### 第三章 分治法
 ### 第四章 蛮力法
 ### 第五章 回溯法

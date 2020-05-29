@@ -73,6 +73,20 @@ BTNode *CreateBTree(ElemType a[], ElemType b[], int n) {
     }
 }
 
+/**
+ * 由二叉树 bt 复制产生二叉树 btcopy
+ */
+void copyBTree(BTNode *bt, BTNode *&btcopy) {
+    if (bt == NULL) {
+        btcopy = NULL;
+    } else {
+        btcopy = (BTNode *)malloc(sizeof(BTNode));
+        btcopy->data = bt->data;
+        copyBTree(bt->lchild, btcopy->lchild);
+        copyBTree(bt->rchild, btcopy->lchild);
+    }
+}
+
 /*==================Test================*/
 int main() {
     int arr[] = {10, 4, 6, 20, 5};
