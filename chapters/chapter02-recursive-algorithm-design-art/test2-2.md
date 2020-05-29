@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-05-29 21:47:56
+ * @LastEditTime: 2020-05-29 21:56:50
  * @FilePath    : \algorithm-design\chapters\chapter02-recursive-algorithm-design-art\test2-2.md
  * @Describe    : 
  -->
@@ -35,7 +35,7 @@ f(arr, end) = MAX{f(arr, end-1), arr[end-1]}    //当 end > 1 时
 
 #2
 
-设 L = {a1, a2, ..., an}，f(L) 的功能是释放 a1~an 中的所有结点，则 f(L->next) 的功能是释放 a2~an 的所有结点，前者是“大问题”，后者是“小问题”。假设 f(L->next) 已实现，则 f(L) 就可以通过先调用 f(L->next) 然后释放 L 所指的结点来求解，对应的递归模型如下：
+设 L = {a1, a2, ..., an}，f(L) 的功能是释放 a1—an 中的所有结点，则 f(L->next) 的功能是释放 a2—an 的所有结点，前者是“大问题”，后者是“小问题”。假设 f(L->next) 已实现，则 f(L) 就可以通过先调用 f(L->next) 然后释放 L 所指的结点来求解，对应的递归模型如下：
 ```c++
 f(L) ≡ 不做任何事情                 //当 L = NULL 时
 f(L) ≡ f(L->next);释放 *L 结点      //其他情况
