@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-05-29 20:42:10
+ * @LastEditTime: 2020-05-29 20:51:21
  * @FilePath    : \algorithm-design\chapters\chapter02-recursive-algorithm-design-art\test2-2.md
  * @Describe    : 
  -->
@@ -40,6 +40,8 @@ f(L) ≡ f(L->next);释放 *L 结点      //其他情况
 - 递归体
 
 ## 代码
+#1、2
+
 - [exp2-2.cpp](code/exp2-2.cpp)
 
 ## 补充
