@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-05-29 21:05:19
+ * @LastEditTime: 2020-05-29 21:09:29
  * @FilePath    : \algorithm-design\chapters\chapter02-recursive-algorithm-design-art\test2-2.md
  * @Describe    : 
  -->
@@ -50,7 +50,7 @@ f(L, x) ≡ f(L->next, x)   //当 L->data ≠ x 时
 - 递归体
 
 ## 代码
-#1、2
+#1、2、3
 
 - [exp2-2.cpp](code/exp2-2.cpp)
 

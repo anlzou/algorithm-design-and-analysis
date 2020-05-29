@@ -7,17 +7,7 @@
  * \algorithm-design\chapters\chapter02-recursive-algorithm-design-art\code\exp2-2.cpp
  * @Describe    :
  */
-#include <iostream>
-using namespace std;
-
-/**
- * 单链表结构体
- * */
-typedef char ElemType;
-typedef struct Node {
-    ElemType data;
-    Node *next;
-} LinkNode;
+#include "./header/header.h"
 
 /**
  * 求数组 arr 中的最大元素的递归算法
@@ -60,6 +50,7 @@ void delAllx(LinkNode *&L, ElemType x) {
     }
 }
 
+/*==================Test================*/
 int main() {
     int arr[] = {10, 4, 6, 20, 5};
     cout << maxArrNumber(arr, 5) << endl;
