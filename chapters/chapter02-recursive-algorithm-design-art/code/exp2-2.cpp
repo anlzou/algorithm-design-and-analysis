@@ -42,6 +42,24 @@ void DestroyList(LinkNode *&L) {
     }
 }
 
+/**
+ * 删除 L 中所有结点值为 x 的结点
+ */
+void delAllx(LinkNode *&L, ElemType x) {
+    LinkNode *p;
+    if (L == NULL) {
+        return;
+    }
+    if (L->data == x) {
+        p = L;
+        L = L->next;
+        free(p);        //删除结点值为 x 的结点
+        delAllx(L, x);  //此时 L 中少了一个结点
+    } else {
+        delAllx(L->next, x);
+    }
+}
+
 int main() {
     int arr[] = {10, 4, 6, 20, 5};
     cout << maxArrNumber(arr, 5) << endl;
