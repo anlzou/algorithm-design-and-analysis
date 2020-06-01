@@ -22,6 +22,7 @@ void disp(int arr_int[], int len) {
     cout << endl;
 }
 
+/*==================快速排序====================*/
 /**
  * 划分算法
  * 按基准值进行排序
@@ -54,15 +55,111 @@ void quickSort(int arr_int[], int front, int rear) {
     }
 }
 
+/*=======================归并排序========================*/
+/**
+ * 将 a[low...mid] 和 a[mid+1...high] 两个相邻的有序子序列归并为一个有序子序列
+ * a[low...high]
+ */
+void funMerge(int a[], int low, int mid, int high) {
+    int *temp;
+    int i = low, j = mid + 1,
+        k = 0;  // k 是 temp 的下标，i,j 分别为两个子表的下标
+    temp = (int *)malloc((high - low + 1) * sizeof(int));
+    while (i <= mid &&
+           j <= high) {  //在第 1 个子表和第 2 个子表均未扫描完时循环
+        if (a[i] <= a[j]) {  //将第 1 个子表中的元素放入 temp 中
+            temp[k] = a[i];
+            i++;
+            k++;
+        } else {  //将第 2 个子表中的元素放入 temp 中
+            temp[k] = a[j];
+            j++;
+            k++;
+        }
+    }
+    while (i <= mid) {  //将第 1 个子表余下的部分复制到 temp
+        temp[k] = a[i];
+        i++;
+        k++;
+    }
+    while (j <= high) {  //将第 2 个子表余下的部分复制到 temp
+        temp[k] = a[j];
+        j++;
+        k++;
+    }
+    for (k = 0, i = low; i <= high; k++, i++) {  //将 temp 复制回 a 中
+        a[i] = temp[k];
+    }
+    free(temp);  //释放空间
+}
+
+/**
+ * 一趟二路归并排序
+ */
+void funMergePass(int a[], int length, int n) {
+    int i;
+    for (i = 0; i + 2 * length - 1 < n;
+         i = i + 2 * length) {  //归并 length 长的两个相邻子表
+        funMerge(a, i, i + length - 1, i + 2 * length - 1);
+    }
+    if (i + length - 1 < n) {  //余下两个子表，后者的长度小于 length
+        funMerge(a, i, i + length - 1, n - 1);
+    }
+}
+
+/**
+ * 二路归并算法
+ * 自底向上
+ */
+void funMergeSort_downTop(int a[], int n) {
+    int length;
+    for (length = 1; length < n; length = 2 * length) {
+        funMergePass(a, length, n);
+    }
+}
+
+/**
+ * 二路归并算法
+ * 自顶向下
+ */
+void funMergeSort_topDown(int a[], int low, int high) {
+    int mid;
+    if (low < high) {            //子序列有两个或两个以上元素
+        mid = (low + high) / 2;  //取中间位置
+        funMergeSort_topDown(a, low, mid);  //对 a[low...mid] 子序列排序
+        funMergeSort_topDown(a, mid + 1, high);  //对 [mid+1...high] 子序列排序
+        funMerge(a, low, mid, high);  //将两个子序列合并，见前面的算法
+    }
+}
+/*============================test============================*/
+
 int main() {
-    int arr_int[] = {2, 5, 1, 7, 10, 6, 9, 4, 3, 8};
-    int len = sizeof(arr_int) / sizeof(int);
+    int arr1_int[] = {2, 5, 1, 7, 10, 6, 9, 4, 3, 8};
+    int arr2_int[] = {2, 5, 1, 7, 10, 6, 9, 4, 3, 8};
+    int arr3_int[] = {2, 5, 1, 7, 10, 6, 9, 4, 3, 8};
+    int len = sizeof(arr1_int) / sizeof(int);
 
-    cout << "before sort:";
-    disp(arr_int, len);
+    cout << "quick sort, before sort:";
+    disp(arr1_int, len);
 
-    quickSort(arr_int, 0, len - 1);
-    cout << "after sort:";
-    disp(arr_int, len);
+    quickSort(arr1_int, 0, len - 1);
+    cout << "quick sort, after sort:";
+    disp(arr1_int, len);
+
+    ///////////////////////////////////////////
+    cout << "merge sort down-top, before sort:";
+    disp(arr2_int, len);
+
+    funMergeSort_downTop(arr2_int, len - 1);
+    cout << "merge sort down-top, after sort:";
+    disp(arr2_int, len);
+
+    cout << "merge sort top-down, before sort:";
+    disp(arr3_int, len);
+
+    funMergeSort_topDown(arr3_int, 0, len - 1);
+    cout << "merge sort top-down, after sort:";
+    disp(arr3_int, len);
+
     return 0;
 }
