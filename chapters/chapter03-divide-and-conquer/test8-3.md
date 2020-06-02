@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-06-02 15:58:17
+ * @LastEditTime: 2020-06-02 16:01:26
  * @FilePath    : \algorithm-design\chapters\chapter03-divide-and-conquer\test8-3.md
  * @Describe    : 
  -->
@@ -30,6 +30,9 @@
 ```
 #1
 对于给定的含有 n 个元素的无序序列，求这个序列中最大和次大的两个不同元素。
+
+#2
+对于给定的含有 n 个元素的有序序列，求这个序列中某个元素的下标。
 ```
 
 ## 思路
