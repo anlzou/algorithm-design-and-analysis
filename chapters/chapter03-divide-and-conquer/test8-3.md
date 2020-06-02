@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-06-02 16:01:26
+ * @LastEditTime: 2020-06-02 16:06:51
  * @FilePath    : \algorithm-design\chapters\chapter03-divide-and-conquer\test8-3.md
  * @Describe    : 
  -->
@@ -62,6 +62,10 @@
 
 ## 复杂度分析
 
-#1、2
-- 平均时间复杂度：O(nlog2n)
+#1
+- 时间复杂度：O(n)
+- 空间复杂度：O(n)
+
+#2
+- 空间复杂度：O(log2n)
 - 空间复杂度：O(n)
