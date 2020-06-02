@@ -2,7 +2,7 @@
  * @Date        : 2020-05-27 21:37:16
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-05-31 21:48:08
+ * @LastEditTime: 2020-06-02 15:19:45
  * @FilePath    : \algorithm-design\README.md
  * @Describe    : 
 --> 
@@ -15,6 +15,7 @@
 - [递归算法设计](./chapters/chapter02-recursive-algorithm-design-art/test2-2.md)
 ### 第三章 分治法
 - [求解排序问题](./chapters/chapter03-divide-and-conquer/test8-2.md)
+- [求解查找问题](./chapters/chapter03-divide-and-conquer/test8-3.md)
 ### 第四章 蛮力法
 ### 第五章 回溯法
 ### 第六章 分枝限界法
