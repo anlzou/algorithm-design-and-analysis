@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-06-05 17:45:44
+ * @LastEditTime: 2020-06-05 18:18:53
  * @FilePath    : \algorithm-design\chapters\chapter05-backtracking\test5-1.md
  * @Describe    : 
  -->
@@ -24,7 +24,7 @@
 ```
 
 ## 思路
-非递归回溯框架
+> 非递归回溯框架
 ```cpp
 int x[x];                                          // x存放解向量，全局变量
 void backtrack(int n){                             // 非递归框架
@@ -33,7 +33,7 @@ void backtrack(int n){                             // 非递归框架
         if(ExisSubNode(t)){                        // 当前结点存在子结点
             for(j = 下界; j <= 上界; j++){          // 对于子集树，j从0到1循环
                 x[i]取一个可能的值;
-                if(constraint(i) && bound(i)){     // x[i]满足约束条件或界限函数
+                if(constraint(i) && bound(i)){     // x[i]满足约束条件和界限函数
                     if(x是一个可行解)
                         输出 ;
                     else i++;                      // 进入下一层
@@ -44,6 +44,51 @@ void backtrack(int n){                             // 非递归框架
 }
 ```
 说明：算法中的变量 i 十分重要，它对应解空间的第 i 层的某个结点，也就是为整个解向量 X 的第 i 步选择一个合适的分量 xi。
+
+> 递归回溯框架
+
+解空间为**子集树**的递归回溯框架如下：
+```cpp
+int x[n];                                   // x 存放解向量，为全局变量
+void backtrack(int i){                      // 求解子集树的递归框架
+    if(i > n){                              // 搜索到叶子结点，输出一个可行解
+        输出结果;
+    }else{
+        for(j = 下界; j <= 上界; j++){       // 用 j 枚举 i 所有可能的路径
+            x[i] = j;                       // 产生一个可能的解分量
+            ...                             // 其他操作
+            if(constraint(i) && bound(i)){
+                backtrack(i+1);             // 满足约束条件和界限函数，继续下一层
+            }
+        }
+    }
+}
+```
+采用上述算法框架需要注意以下几点：
+1. i 从 1 开始调用上述回溯算法框架，此时结点为第 1 层，叶子结点为第 n+1 层，当然 i 也可以从 0 开始，这样根结点为第 0 层，叶子结点为第 n 层，所以需要将上述代码中的 <code>if(i > n)</code> 改为 <code>if(i >= n)</code>。
+2. 在上述框架中通过 for 循环用 j 枚举 i 的所有可能路径，如果扩展路径只有两条，可以改为两次递归调用（如求解 0/1 背包问题、子集合问题等都是如此）。
+3. 这里回溯框架只有 i 一个参数，在实际应用中可以根据具体情况设置多个参数。
+
+解空间为**排列树**的递归回溯框架如下：
+```cpp
+int x[n];                                   // x 存放解向量，并初始化
+void backtrack(int i){                      // 求解排列树的递归框架
+    if(i > n){                              // 搜索到叶子结点，输出一个可行解
+        输出结果;
+    }else{
+        for(j = i; j <= n; j++){            // 用 j 枚举 i 的所有可能路径
+            ...                             // 第 i 层的结点选择 x[j] 的操作
+            swap(x[i], x[j]);               // 为保证排列中的每个元素不同，通过交换来实现
+            if(constraint(i) && bound(i)){
+                backtarck(i+1);             // 满足约束条件和界限函数，计入下一层
+            }
+            swap(x[i], x[j]);               // 恢复状态
+            ...                             // 第 i 层的结点选择 x[j] 的恢复操作
+        }
+    }
+}
+```
+注意点：与解空间树为子集树的递归回溯框架相同。
 
 #1
 
