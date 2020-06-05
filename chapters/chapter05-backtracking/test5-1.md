@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-06-05 17:43:00
+ * @LastEditTime: 2020-06-05 17:45:44
  * @FilePath    : \algorithm-design\chapters\chapter05-backtracking\test5-1.md
  * @Describe    : 
  -->
@@ -56,6 +56,9 @@ void backtrack(int n){                             // 非递归框架
 ## 关键点
 - **解空间**(solution space) ≡ **解空间树** ≡ **状态空间树**(state space tree)
 
+## 代码
+- [exp5-1.cpp](./code/exp5-1.cpp)
+
 ## 补充
 <code>memset()</code>
 
@@ -69,9 +72,6 @@ void backtrack(int n){                             // 非递归框架
     memset( the_array, '\0', sizeof(the_array) );
 ```
 这是将一个数组的所以分量设置成零的很便捷的方法。
-
-## 代码
-- [exp5-1.cpp](./code/exp5-1.cpp)
 
 ## 复杂度分析
 
