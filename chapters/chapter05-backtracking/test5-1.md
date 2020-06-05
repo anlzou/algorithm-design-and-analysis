@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-06-05 20:28:12
+ * @LastEditTime: 2020-06-05 20:58:25
  * @FilePath    : \algorithm-design\chapters\chapter05-backtracking\test5-1.md
  * @Describe    : 
  -->
@@ -121,7 +121,7 @@ void backtrack(int i){                      // 求解排列树的递归框架
 - [exp5-1-2.cpp](./code/exp5-1-2.cpp)
 
 ## 补充
-<code>memset()</code>
+> <code>memset()</code>
 
 语法:
 ```cpp
@@ -133,6 +133,37 @@ void backtrack(int i){                      // 求解排列树的递归框架
     memset( the_array, '\0', sizeof(the_array) );
 ```
 这是将一个数组的所以分量设置成零的很便捷的方法。
+
+> <code>vector</code>
+
+Vectors 包含着一系列连续存储的元素,其行为和数组类似。
+
+```cpp
+Constructors    //构造函数 
+Operators       //对vector进行赋值或比较 
+assign()        //对Vector中的元素赋值 
+at()            //返回指定位置的元素 
+back()          //返回最末一个元素 
+begin()         //返回第一个元素的迭代器 
+capacity()      //返回vector所能容纳的元素数量(在不重新分配内存的情况下） 
+clear()         //清空所有元素 
+empty()         //判断Vector是否为空（返回true时为空） 
+end()           //返回最末元素的迭代器(译注:实指向最末元素的下一个位置) 
+erase()         //删除指定元素 
+front()         //返回第一个元素 
+get_allocator() //返回vector的内存分配器 
+insert()        //插入元素到Vector中 
+max_size()      //返回Vector所能容纳元素的最大数量（上限） 
+pop_back()      //移除最后一个元素 
+push_back()     //在Vector最后添加一个元素 
+rbegin()        //返回Vector尾部的逆迭代器 
+rend()          //返回Vector起始的逆迭代器 
+reserve()       //设置Vector最小的元素容纳数量 
+resize()        //改变Vector元素数量的大小 
+size()          //返回Vector元素数量的大小 
+swap()          //交换两个Vector 
+
+```
 
 ## 复杂度分析
 
