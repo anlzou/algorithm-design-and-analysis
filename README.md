@@ -2,7 +2,7 @@
  * @Date        : 2020-05-27 21:37:16
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-06-02 15:19:45
+ * @LastEditTime: 2020-06-05 17:42:23
  * @FilePath    : \algorithm-design\README.md
  * @Describe    : 
 --> 
@@ -18,6 +18,7 @@
 - [求解查找问题](./chapters/chapter03-divide-and-conquer/test8-3.md)
 ### 第四章 蛮力法
 ### 第五章 回溯法
+- [回溯法概述](./chapters/chapter05-backtracking/test5-1.md)
 ### 第六章 分枝限界法
 ### 第七章 贪心法
 ### 第八章 动态规划
