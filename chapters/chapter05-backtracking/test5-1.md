@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-06-05 20:58:25
+ * @LastEditTime: 2020-06-06 22:25:48
  * @FilePath    : \algorithm-design\chapters\chapter05-backtracking\test5-1.md
  * @Describe    : 
  -->
@@ -25,6 +25,12 @@
 #2
 
 有一个含 n 个整数的数组 a，所有元素均不相同，设计一个算法求其所有子集（幂集，个数为2^n）。
+
+#3
+
+设计一个算法在 1、2、...、9（顺序不能变）数字之间插入 + 或 - 或什么都插入，使得计算结果总是 100 的程序，并输出所有的可能性。
+
+例如 1+2+34-5+67-8+9=100
 ```
 
 ## 思路
@@ -110,6 +116,12 @@ void backtrack(int i){                      // 求解排列树的递归框架
 
 这里 i 总是递增的，所以不会出现状态重复的情况。
 
+#3
+
+用数组 a 存放 1~9 的整数，用字符数组 op 存放插入的运算符，op[i] 表示在 a[i] 之前插入的运算符。采用回溯法产生和为 100 的表达式，op[i] 只能取值 +、- 或者空格（不同于上一个例子，这里是三选一）。
+
+设计函数fun(op, sum, prevadd, a, i)，其中 sum 记录考虑整数 a[i] 时前面表达式计算的整数和（初始值为 a[0]），preadd 记录前面表达式中的一个数值（初始值为 a[0]），i 从 1 开始到 8 结束，如果 sum = 100 ，得到一个解。
+
 ## 关键点
 - **解空间**(solution space) ≡ **解空间树** ≡ **状态空间树**(state space tree)
 
@@ -119,6 +131,9 @@ void backtrack(int i){                      // 求解排列树的递归框架
 
 #2
 - [exp5-1-2.cpp](./code/exp5-1-2.cpp)
+
+#3
+- [exp5-1-3.cpp](./code/exp5-1-3.cpp)
 
 ## 补充
 > <code>memset()</code>
