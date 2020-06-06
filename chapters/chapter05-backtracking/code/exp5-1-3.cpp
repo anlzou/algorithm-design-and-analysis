@@ -29,6 +29,7 @@ void funSolve(char op[], int sum, int prevadd, int arr_number[], int index) {
         }
         return;
     }
+
     op[index] = '+';           //位置 i 插入 '+'
     sum += arr_number[index];  //计算结果
     funSolve(op, sum, arr_number[index], arr_number,
@@ -55,13 +56,16 @@ void funSolve(char op[], int sum, int prevadd, int arr_number[], int index) {
     sum += prevadd;
 }
 
+/*=============================test================================*/
 int main() {
     int arr[N];
     char op[N];                    // op[i] 表示在位置 i 插入运算符
     for (int i = 0; i < N; i++) {  //将 a 赋值为1、2、...、9
         arr[i] = i + 1;
     }
+
     cout << "The answer:" << endl;
     funSolve(op, arr[0], arr[0], arr, 1);  //插入位置 i 从 1 开始
+
     return 0;
 }
