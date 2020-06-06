@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-06-06 22:25:48
+ * @LastEditTime: 2020-06-06 22:44:19
  * @FilePath    : \algorithm-design\chapters\chapter05-backtracking\test5-1.md
  * @Describe    : 
  -->
@@ -28,7 +28,8 @@
 
 #3
 
-设计一个算法在 1、2、...、9（顺序不能变）数字之间插入 + 或 - 或什么都插入，使得计算结果总是 100 的程序，并输出所有的可能性。
+设计一个算法在 1、2、...、9（顺序不能变）数字之间插入 + 或 - 或什么都不插入，
+使得计算结果总是 100 的程序，并输出所有的可能性。
 
 例如 1+2+34-5+67-8+9=100
 ```
