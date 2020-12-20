@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-12-20 17:45:45
+ * @LastEditTime: 2020-12-20 18:08:20
  * @FilePath    : \algorithm-design\chapters\chapter08-dynamic-programming\test8-1.md
  * @Describe    : 
  -->
@@ -27,6 +27,8 @@
 目的：
 ```
 从求解斐波那契数列看动态规划法
+
+动态规划问题的解法
 ```
 
 ## 思路
@@ -52,7 +54,9 @@
 - map<K, V> mapName;
 
 ## 代码
-- [exp8-1.cpp](./code/exp8-1.cpp)
+>- [head.h](./struct/head.h)
+>>- [exp8-1.cpp](./code/exp8-1.cpp)
+>>- [exp8_2_1.cpp](./code/exp8_2_1.cpp)
 
 ## 复杂度分析
 #1
