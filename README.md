@@ -2,7 +2,7 @@
  * @Date        : 2020-05-27 21:37:16
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-06-05 17:42:23
+ * @LastEditTime: 2020-12-20 18:02:50
  * @FilePath    : \algorithm-design\README.md
  * @Describe    : 
 --> 
@@ -22,7 +22,9 @@
 ### 第六章 分枝限界法
 ### 第七章 贪心法
 ### 第八章 动态规划
-- [求解斐波那契数列](./chapters/chapter08-dynamic-programming/test8-1.md)
+- [动态规划概述](./chapters/chapter08-dynamic-programming/test8-1.md)
+  - 求解斐波那契数列
+  - 一个多阶段图或多段图的最短路径（逆序解法和顺序解法）
 ### 第九章 图算法设计
 ### 第十章 计算几何
 ### 第十一章 计算复杂性理论简介
