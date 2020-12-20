@@ -18,7 +18,7 @@ int reverseOrder(int s) {
     if (s == end_) {                //找到终点
         dp[s] = 0;
         cout << "(" << Count++ << ") "
-             << "(" + vname[s] << ")" << endl;
+             << "(" + vname[s] << ") = 0" << endl;
     } else {
         int cost, mincost = INF, minj;
         for (int j = 0; j < n; j++) {  //查找顶点s的后继顶点
@@ -47,8 +47,8 @@ int reverseOrder(int s) {
 /*================================ test ==================================*/
 int main() {
     Init();
-    cout << vname[end_] << "->" << vname[start] << "求解过程" << endl;
-    reverseOrder(start);
+    cout << vname[end_] << "->" << vname[start_] << "求解过程" << endl;
+    reverseOrder(start_);
     // Disp();
     return 0;
 }

@@ -18,10 +18,11 @@ using namespace std;
  * 问题表示
  */
 int n;                   //顶点个数
-int start;               //起点编号
+int start_;              //起点编号
 int end_;                //终点编号
 int c[MAX][MAX];         //存放边长度
 int next_[MAX];          //存放最短路径上当前顶点的后继顶点
+int pre_[MAX];           //存放最短路径上当前顶点的前继顶点
 map<int, string> vname;  //存放编号对应的顶点名称
 int dp[MAX];             //最优结果数组
 int Count = 1;           //计算步骤
@@ -50,7 +51,7 @@ void Disp() {
  */
 void Init() {
     n = 10;
-    start = 0;
+    start_ = 0;
     end_ = 9;
     memset(c, INF, sizeof(c));
     //结果数组置为-1

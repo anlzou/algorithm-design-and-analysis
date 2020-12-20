@@ -2,7 +2,7 @@
  * @Date        : 2020-05-02 20:37:47
  * @LastEditors : anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-12-20 18:08:20
+ * @LastEditTime: 2020-12-20 19:06:20
  * @FilePath    : \algorithm-design\chapters\chapter08-dynamic-programming\test8-1.md
  * @Describe    : 
  -->
@@ -57,6 +57,7 @@
 >- [head.h](./struct/head.h)
 >>- [exp8-1.cpp](./code/exp8-1.cpp)
 >>- [exp8_2_1.cpp](./code/exp8_2_1.cpp)
+>>- [exp8_2_2.cpp](./code/exp8_2_2.cpp)
 
 ## 复杂度分析
 #1
